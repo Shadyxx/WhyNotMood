@@ -1,0 +1,333 @@
+@charset "UTF-8";
+/* CSS Document by Dylan Crokaert & Daan Decrick */
+
+body 
+{
+    background-repeat: no-repeat;
+	background-size: cover;	
+}
+#other
+{
+	background-image:url('images/canvasbg.jpg');
+}
+
+#buttons
+{        
+    position: absolute;
+    text-align: center;
+    height: 20%;
+    width: 95%;
+    margin-left:2%;
+    bottom:2%;
+    padding: 0;   	
+}
+
+#buttons li 
+{
+    display: inline;
+	text-align: center;
+}
+
+#bannerHome
+{
+	background-image:url('images/Banner.png');
+	margin-top:5%;
+	height: 40%;
+	width: 100%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-size: 100%;	
+	border-radius:10px;
+}
+
+@media screen and (orientation: portrait){
+#infotext
+{
+  	border:2px solid #456879;
+	border-radius:20px;
+	border-width:5px;
+	margin-left:5%;
+	margin-top:5%;
+	height: 40%;
+	width: 90%;
+	font-family: fantasy;
+	text-align: center;
+}
+#bannerHome
+{
+margin-top:30%;
+}
+}
+@media screen and (orientation: landscape){
+#infotext
+{
+  	border:2px solid #456879;
+	border-radius:20px;
+	border-width:5px;
+	margin-left:5%;
+	margin-top:5%;
+	height: 60%;
+	width: 90%;
+	font-family: fantasy;
+	text-align: center;
+}
+#bannerHome
+{
+margin-top:12%;
+}
+}
+
+@media screen and (max-device-width: 480px){
+    #infotext
+{
+  	border:2px solid #456879;
+	border-radius:20px;
+	border-width:5px;
+	margin-left:5%;
+	margin-top:5%;
+	height: 60%;
+	width: 90%;
+	font-family: fantasy;
+	text-align: center;
+	font-size: small;
+}
+
+}
+}
+
+#musicPlayingMix
+{
+	display:block;
+	text-align:center;
+}
+
+.mydropdown
+{
+   width: 400px;
+   height: 34px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top:10%;
+   overflow: hidden;
+   background: url(images/down_arrow_select.png) no-repeat right #ddd;
+   border: 3px solid #ccc;
+   border-radius: 15px;
+}
+
+.mydropdown select {
+   background: transparent;
+   width: 400px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+}
+
+.mydropdown2
+{
+   width: 400px;
+   height: 34px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top:5%;
+   overflow: hidden;
+   background: url(images/down_arrow_select.png) no-repeat right #ddd;
+   border: 3px solid #ccc;
+   border-radius: 15px;
+}
+
+.mydropdown2 select {
+   background: transparent;
+   width: 400px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+}
+
+.mydropdown3
+{
+   width: 400px;
+   height: 34px;
+   margin-left: auto;
+   margin-right: auto;
+   margin-top:5%;
+   overflow: hidden;
+   background: url(images/down_arrow_select.png) no-repeat right #ddd;
+   border: 3px solid #ccc;
+   border-radius: 15px;
+}
+
+.mydropdown3 select {
+   background: transparent;
+   width: 400px;
+   padding: 5px;
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+}
+
+#wrapper
+{
+	border:2px solid #03A4F4;
+	border-radius:20px;
+	border-width:5px;
+	margin-top:0%;
+	height: 8%;
+	width: 100%;
+	font-family: fantasy;
+	font-size: 23px;
+	text-align: center;
+}
+
+#map
+{
+	width: 50%;
+	margin: 0px auto 0px auto;
+	margin-top:2%;
+	text-align: center;
+}
+
+#Search
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/search.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#Online
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/online.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#Offline
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/offline.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#Explore
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/songs.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#Geo
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/world.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#Info
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/info.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#Play
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/play.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#Stop
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/stop.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+#Homeback
+{
+	background-color: transparent;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	width:150px; 
+	height:150px;
+	background-size: 40px auto;
+	background-image:url('images/home.png');
+	background-size: 100%;
+    font-weight: 300;
+    font-size: 60px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
