@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Search moods</title>
+		<link rel="stylesheet" type="text/css" href="WhyNotMood.css">
+		<script src="WhyNotMood.js"></script> 
+	</head>
+
+	<body id="other">
+		<div class ="mydropdown">
+			<select id="moodchoice" onChange="selectMood1()">
+				<option value="">Please select your first mood</option>
+				<option value="Happy">Happy</option>
+				<option value="Sad">Sad</option>
+				<option value="Chill">Chill</option>
+				<option value="High">High</option>
+				<option value="Party">Party</option>
+				<option value="Study">Study</option>
+				<option value="Focus">Focus</option>
+				<option value="Sick">Sick</option>
+			</select>
+		</div>
+		<div class ="mydropdown2">
+			<select id="moodchoice2" onChange="selectMood2()">
+			<option value="">Please select your second mood ( optional )</option>
+				<option value="Happy">Happy</option>
+				<option value="Sad">Sad</option>
+				<option value="Chill">Chill</option>
+				<option value="High">High</option>
+				<option value="Party">Party</option>
+				<option value="Study">Study</option>
+				<option value="Focus">Focus</option>
+				<option value="Sick">Sick</option>
+			</select>
+		</div>
+		<div class ="mydropdown3">
+			<select id="moodchoice3" onChange="selectMood3()">
+				<option value="">Do you wish for a christmas surprise ?</option>
+				<option value="Yes">Yes</option>
+				<option value="No">No</option>
+			</select>
+		</div>
+		<ul id="buttons">
+			<form name="MenuButton">
+				<a href="onplay.html"><li><input id="Search" type="button" name="Search"  /></li></a>
+				<a href="index.html"><li><input id="Homeback" type="button" name="Homeback" value="" /></li></a>
+			</form>
+		</ul>
+	</body>
+
+</html>
