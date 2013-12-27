@@ -16,6 +16,7 @@ function success(position) {
   var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
 
   localStorage.locmoodlat = position.coords.latitude;
+  localStorage.locmood = "BE";
   localStorage.locmoodlong = position.coords.longitude;
   
   var options = {
@@ -65,7 +66,7 @@ var url="http://maps.googleapis.com/maps/api/geocode/json?latlng="+latitude1+","
            if (!xhr) {
              alert('CORS not supported');
            }
-		   localStorage.locmood = "BE";	
+		   
 		   xhr.onerror = function() {
                alert('Woops, there was an error making the request.');   	   
            };
