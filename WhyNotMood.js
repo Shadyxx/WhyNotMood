@@ -8,8 +8,8 @@ var country;
 function success(position) {
   var mapcanvas = document.createElement('div');
   mapcanvas.id = 'mapcontainer';
-  mapcanvas.style.height = '150px';
-  mapcanvas.style.width = '250px';
+  mapcanvas.style.height = '100px';
+  mapcanvas.style.width = '300px';
 
   document.querySelector('article').appendChild(mapcanvas);
 
@@ -147,7 +147,7 @@ function musicStart(){
 	document.getElementById("gif").src="images/animated.gif";
 	if(locmood == 'BE' ){
 		document.getElementById("musicPlayingMix").src="http://youtube.com/embed/do5kXObPOCE";
-		mixplaying.innerHTML = "You are in Belgium ! Here is a famous artist from Belgium." + locmoodlat + locmoodlong;
+		mixplaying.innerHTML = "You are in Belgium ! Here is a famous artist from Belgium.";
 	} else if(locmood == 'FR' ){
 		document.getElementById("musicPlayingMix").src="http://youtube.com/embed/na-GFi4XaW0";
 		mixplaying.innerHTML = "You are in France ! Here is a famous artist from France.";
@@ -189,7 +189,7 @@ function musicStart(){
 					mixplaying.innerHTML = "The sick mix ! :@";
 				}  else {
 					document.getElementById("musicPlayingMix").src="http://youtube.com/embed/EVlKPyIe2RY";
-					mixplaying.innerHTML = "You did not select a first mood, or did something strange. So you get some old hip hop!" + locmood;
+					mixplaying.innerHTML = "You did not select a first mood, or did something strange. So you get some old hip hop!";
 				} 
 			} else {
 				if (typeof mood === 'undefined'){
