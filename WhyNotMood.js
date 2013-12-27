@@ -8,8 +8,8 @@ var country;
 function success(position) {
   var mapcanvas = document.createElement('div');
   mapcanvas.id = 'mapcontainer';
-  mapcanvas.style.height = '404px';
-  mapcanvas.style.width = '592px';
+  mapcanvas.style.height = '150px';
+  mapcanvas.style.width = '250px';
 
   document.querySelector('article').appendChild(mapcanvas);
 
@@ -99,10 +99,12 @@ var url="http://maps.googleapis.com/maps/api/geocode/json?latlng="+latitude1+","
         xhr.send();
 }
 
+function activate(){
 if (navigator.geolocation) {
 	navigator.geolocation.getCurrentPosition(success);
 } else {
   error('Geo Location is not supported');
+}
 }
 
 
