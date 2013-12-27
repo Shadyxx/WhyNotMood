@@ -3,6 +3,7 @@ var mood2 = '';
 var mood3 = '';
 var locmood = '';
 var playing = 0;
+var country;
 
 function success(position) {
   var mapcanvas = document.createElement('div');
@@ -12,7 +13,10 @@ function success(position) {
 
   document.querySelector('article').appendChild(mapcanvas);
 
-  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);localStorage.locmood = "BE";
+  var coords = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+  localStorage.locmoodlat = position.coords.latitude;
+  localStorage.locmoodlong = position.coords.longitude;
   
   var options = {
     zoom: 15,
@@ -30,14 +34,77 @@ function success(position) {
       map: map,
       title:"You are here!"
   });
-  
+        
+}
+
+function createCORSRequest(method, url) {
+  var xhr = new XMLHttpRequest();
+
+  if ("withCredentials" in xhr) {
+    // XHR for Chrome/Firefox/Opera/Safari.
+    xhr.open(method, url, true);
+
+  } else if (typeof XDomainRequest != "undefined") {
+    // XDomainRequest for IE.
+    xhr = new XDomainRequest();
+    xhr.open(method, url);
+
+  } else {
+    // CORS not supported.
+    xhr = null;
+  }
+  return xhr;
+}
+
+function getcountry(locmoodlat, locmoodlong){
+latitude1=locmoodlat;
+longitude1=locmoodlong;
+
+var url="http://maps.googleapis.com/maps/api/geocode/json?latlng="+latitude1+","+longitude1+"&sensor=true";
+		var xhr = createCORSRequest('POST', url);
+           if (!xhr) {
+             alert('CORS not supported');
+           }
+		   localStorage.locmood = "BE";	
+		   xhr.onerror = function() {
+               alert('Woops, there was an error making the request.');   	   
+           };
+		   
+           xhr.onload = function() {
+
+            var data =JSON.parse(xhr.responseText);
+            
+            if(data.results.length>0)
+            {
+            
+            var locationDetails=data.results[0].formatted_address;
+            var  value=locationDetails.split(",");
+            
+            count=value.length;
+            
+             country=value[count-1];       
+             localStorage.locmood = country;
+            }
+            else
+            {
+             localStorage.locmood = "error";
+            }
+            
+           };
+
+           xhr.onerror = function() {
+               alert('Woops, there was an error making the request.');       
+           };
+        xhr.send();
 }
 
 if (navigator.geolocation) {
-  navigator.geolocation.getCurrentPosition(success);
+	navigator.geolocation.getCurrentPosition(success);
 } else {
   error('Geo Location is not supported');
 }
+
+
 
 
 function selectMood1(){
@@ -65,16 +132,19 @@ function selectCountry(){
 }
 
 
-
 function musicStart(){
 	mood = localStorage.mood1;
 	mood2 = localStorage.mood2;
 	mood3 = localStorage.mood3;
+	locmoodlat = localStorage.locmoodlat;
+	locmoodlong = localStorage.locmoodlong;
+	getcountry(locmoodlat, locmoodlong);
 	locmood = localStorage.locmood;
+	
 	document.getElementById("gif").src="images/animated.gif";
 	if(locmood == 'BE' ){
 		document.getElementById("musicPlayingMix").src="http://youtube.com/embed/do5kXObPOCE";
-		mixplaying.innerHTML = "You are in Belgium ! Here is a famous artist from Belgium.";
+		mixplaying.innerHTML = "You are in Belgium ! Here is a famous artist from Belgium." + locmoodlat + locmoodlong;
 	} else if(locmood == 'FR' ){
 		document.getElementById("musicPlayingMix").src="http://youtube.com/embed/na-GFi4XaW0";
 		mixplaying.innerHTML = "You are in France ! Here is a famous artist from France.";
@@ -115,8 +185,8 @@ function musicStart(){
 					document.getElementById("musicPlayingMix").src="http://youtube.com/embed/YeuLTL8pQRQ";
 					mixplaying.innerHTML = "The sick mix ! :@";
 				}  else {
-					document.getElementById("musicPlayingMix").src="http://youtube.com/embed/9nqr8BSvoz0";
-					mixplaying.innerHTML = "You did not select a first mood, or did something strange. So you get some old hip hop!";
+					document.getElementById("musicPlayingMix").src="http://youtube.com/embed/EVlKPyIe2RY";
+					mixplaying.innerHTML = "You did not select a first mood, or did something strange. So you get some old hip hop!" + locmood;
 				} 
 			} else {
 				if (typeof mood === 'undefined'){
